@@ -175,13 +175,13 @@ public class JSONObject {
      * Construct an empty JSONObject.
      */
     public JSONObject() {
-        // HashMap is used on purpose to ensure that elements are unordered by 
-        // the specification.
+        // LinkedHashMap is used on purpose to ensure that elements are ordered by
+        // inspite of the specification rules.
         // JSON tends to be a portable transfer format to allows the container 
         // implementations to rearrange their items for a faster element 
         // retrieval based on associative access.
-        // Therefore, an implementation mustn't rely on the order of the item.
-        this.map = new HashMap<String, Object>();
+        // Therefore, an implementation mustn't rely on the order of the item ideally.
+        this.map = new java.util.LinkedHashMap<String, Object>();
     }
 
     /**
