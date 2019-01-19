@@ -1,6 +1,16 @@
-# ignore eclipse project files
-.project
+# Eclipse
 .classpath
-# ignore Intellij Idea project files
-.idea
+.project
+.settings/
+
+# Intellij
+.idea/
 *.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/

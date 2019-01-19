@@ -78,11 +78,11 @@ public class Cookie {
      *  members.
      * @throws JSONException
      */
-    public static JSONObject toJSONObject(String string) throws JSONException {
+    public static org.json.JSONObject toJSONObject(String string) throws org.json.JSONException {
         String         name;
-        JSONObject     jo = new JSONObject();
+        org.json.JSONObject jo = new org.json.JSONObject();
         Object         value;
-        JSONTokener x = new JSONTokener(string);
+        org.json.JSONTokener x = new org.json.JSONTokener(string);
         jo.put("name", x.nextTo('='));
         x.next('=');
         jo.put("value", x.nextTo(';'));
@@ -115,7 +115,7 @@ public class Cookie {
      * @return A cookie specification string
      * @throws JSONException
      */
-    public static String toString(JSONObject jo) throws JSONException {
+    public static String toString(org.json.JSONObject jo) throws org.json.JSONException {
         StringBuilder sb = new StringBuilder();
 
         sb.append(escape(jo.getString("name")));
@@ -155,8 +155,8 @@ public class Cookie {
             if (c == '+') {
                 c = ' ';
             } else if (c == '%' && i + 2 < length) {
-                int d = JSONTokener.dehexchar(string.charAt(i + 1));
-                int e = JSONTokener.dehexchar(string.charAt(i + 2));
+                int d = org.json.JSONTokener.dehexchar(string.charAt(i + 1));
+                int e = org.json.JSONTokener.dehexchar(string.charAt(i + 2));
                 if (d >= 0 && e >= 0) {
                     c = (char)(d * 16 + e);
                     i += 2;

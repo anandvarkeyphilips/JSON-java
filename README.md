@@ -5,6 +5,9 @@ JSON in Java [package org.json]
 
 **[Click here if you just want the jar file.](http://central.maven.org/maven2/org/json/json/20180813/json-20180813.jar)**
 
+
+This is an ordered version implementation using LinkedHashMap instead of HashMap of https://github.com/stleary/JSON-java
+
 JSON is a light-weight, language independent, data interchange format.
 See http://www.JSON.org/
 
